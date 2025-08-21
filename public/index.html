@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Terminator - Multi-Window Terminal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css">
+    <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xterm-addon-fit@0.8.0/lib/xterm-addon-fit.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xterm-addon-web-links@0.9.0/lib/xterm-addon-web-links.js"></script>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="terminal-container">
+        <div class="toolbar">
+            <div class="toolbar-left">
+                <button id="newWindowBtn" class="toolbar-btn" title="New Window (Ctrl+T)">
+                    <span>+</span>
+                </button>
+                <button id="closeWindowBtn" class="toolbar-btn" title="Close Window (Ctrl+W)">
+                    <span>×</span>
+                </button>
+            </div>
+            <div class="toolbar-center">
+                <span class="title">Web Terminator</span>
+            </div>
+            <div class="toolbar-right">
+                <span class="status">Connected</span>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="taskbar" id="taskbar">
+                <div class="taskbar-header">
+                    <span>Windows</span>
+                </div>
+                <div class="window-list" id="windowList">
+                    <!-- Window list items will be created here -->
+                </div>
+            </div>
+            
+            <div class="taskbar-resize-handle" id="taskbarResizeHandle"></div>
+            
+            <div class="desktop" id="desktop">
+                <!-- Terminal windows will be created here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="terminal.js"></script>
+</body>
+</html>
